@@ -1,0 +1,74 @@
+<html>
+    <body style="background: white;">
+    <%= render 'layouts/header' %>
+        <div style="padding-top: 20px;">
+            <div>
+                <div class="col-md-6 text-center">
+                  <div class="well well-lg">
+
+                    <h1>Donate or Adopt</h1>
+
+                    <div class="tabs">
+                        <ul class="tab-links">
+                            <li class="active"><a href="#tab1">Register To Adopt</a></li>
+                            <li><a href="#tab2">Donate</a></li>
+                        </ul>
+                     
+                        <div class="tab-content" style="height: 305px;">
+                            <div id="tab1" class="tab active">                            
+                                <%= render 'form' %>
+                            </div>
+                     
+                            <div id="tab2" class="tab">
+                                <%= render 'form2' %>
+                            </div>
+                     
+                        </div>
+                    </div>
+                    
+                  </div>
+
+                  <div class="well well-lg">
+                    <h2>Featured Pets</h2>
+                      
+                        <% doc = Document.all %>
+                        <% doc.each_with_index do |document, i| %>
+                          <% if i < 10 %>
+                           
+                           <div class="well well-lg text-center" style="width: 180; display: inline-block;"> 
+                            <div class="w3-card-2" style="width: 150px; border-radius: 25px;">
+                                <%= image_tag(document.filename, :size => "150x150", :alt => "Image") %>
+                                    
+                                    <div class="w3-container w3-center" style="background-color:white; border-radius:25px;">
+                                        <p><br><%= document.animalname %></p>
+                                    </div>
+                            </div>
+                           </div>
+                           
+                          <% end %>  
+                        <% end %>
+                  </div>
+                </div>
+                
+                <div class="col-md-3 text-center">
+                    
+                    <div class="well well-lg">
+                      
+                    </div>
+
+            </div>
+            <div class="col-md-3 text-center">
+             <div class="well well-lg" style="height: 250px;">
+                <h4>Search Pets</h4>
+                <%= render 'form3' %>
+             </div>
+             <div class="well well-lg">
+                <h4>Upcoming Events</h4><hr>
+                <p>There will be an adoption event
+                this Friday. June 3 2016</p>
+             </div>
+            </div>
+        </div>
+
+    </body>
+</html>

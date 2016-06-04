@@ -1,0 +1,21 @@
+<%= form_for :welcome do |f| %>
+  <p>
+    <%= f.label :first_name, 'First Name' %><br>
+    <%= f.text_field :title, :size => "31x10" %><br>
+    <%= f.label :last_name, 'Last Name' %><br>
+    <%= f.text_field :text, :size => "30x10" %>
+  </p>
+ 
+  <p>
+    <%= f.label :phoneNumber, 'Phone Number' %><br>
+    <%= f.text_field :integer, :size => "30x10" %>
+  </p>
+  
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="A month's subscription"
+          data-amount="500"
+          data-locale="auto">
+  </script><br><br>
+  <h4>Quick Donation $5.00, click <%= link_to 'HERE', '/welcome/donate' %> to donate more.</h4>
+<% end %>

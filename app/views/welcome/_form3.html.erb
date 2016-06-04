@@ -1,0 +1,24 @@
+<%= form_for :welcome do |f| %>
+  <p>
+    <%= f.label :state, 'Size' %><br>
+    <%= f.select(:state) do %>
+    <% [['Small', 1], ['Medium', 2], ['Large', 3]].each do |c| -%>
+    <%= content_tag(:option, c.first, value: c.last) %>
+    <% end %>
+<% end %>
+  </p>
+    <p>
+    <%= f.label :city, 'Gender' %><br>
+    <%= f.select(:state) do %>
+    <% [['Male', 1], ['Female', 2], ['Large', 3]].each do |c| -%>
+    <%= content_tag(:option, c.first, value: c.last) %>
+    <% end %>
+<% end %>
+  </p>
+
+  <p>
+    <%= f.submit "Search", class: 'btn btn-info' %>
+  </p>
+<% end %>
+
+

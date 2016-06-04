@@ -1,0 +1,95 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.tabs {
+	width: 100%;
+	display:inline-block;
+}
+	.tab-links:after {
+		display: block;
+		clear: both;
+		content: '';
+	}
+
+	.tab-links li {
+		margin: 0px 5px;
+		float: left;
+		list-style: none;
+	}
+
+		.tab-links a {
+			padding: 9px 15px;
+			display: inline-block;
+			border-radius: 3px 3px 0px 0px;
+			background: #7FB5DA;
+			font-size: 16px;
+			font-weight: 600;
+			color: #4c4c4c;
+			transition: all linear 0.15;
+		}
+
+		.tab-links a:hover {
+			background: #a7cce5;
+			text-decoration: none;
+		}
+
+	li.active a, li.active a:hover {
+		background: #fff;
+		color: #4c4c4c;
+	}
+
+	.tab-content {
+		padding: 15px;
+		border-radius: 3px;
+		box-shadow: -1px 1px 1px rgba(0,0,0,0.15);
+		background: #fff;
+	}
+
+		.tab {
+			background: transparent;
+			display: none;
+		}
+
+		.tab-active {
+			background: transparent;
+			display: block;
+			width: 100%;
+		}
+
+.adoptable-pets {
+	display: inline-block;
+
+}
+
+.box1 {
+	width: 100%;
+	height: auto;
+	background: white;
+}
+
+.box2 {
+	width: 100%;
+	height: auto;
+}
+
+.plain {
+	
+}
+
+.welcome_form {
+	background: white;
+	width: auto;
+	height: auto;
+}
+.portals {
+	size: 14px;
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #2ECCFA;
+    text-align: left;
+}
+.portals hover:not(.active){
+    background-color: white;
+}

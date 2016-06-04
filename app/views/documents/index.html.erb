@@ -1,0 +1,29 @@
+<%= render 'layouts/vheader' %>
+<div class="container">
+<div class="box">
+
+  <%= link_to 'Add Image', documents_new_path %>
+  <div class="col-md-12"><br>   
+    <div class="well well-lg">
+
+
+            <% @documents.each_with_index do |document, i| %>
+            <% if i > 0 && i % 4 == 0 %>
+            <tr>             
+              <td><%= link_to image_tag(document.filename,:size =>"100x100",:alt => "Image"),document_path(document) %></td>
+              <td><%= document.animalname %></td>
+              <td><%= link_to 'Delete', document, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr<br><br>
+            <% else %>
+             <td><%= link_to image_tag(document.filename,:size =>"100x100",:alt => "Image"),document_path(document) %></td>
+             <td><%= document.animalname %></td>
+             <td><%= link_to 'Delete', document, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <% end %>
+            <% end %>
+
+
+    </div>
+  </div>
+ </div>
+</div>
+

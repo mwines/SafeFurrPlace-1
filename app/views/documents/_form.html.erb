@@ -1,0 +1,17 @@
+<!-- app/views/documents/_form.html.erb -->
+<%= form_for(@document) do |f| %>
+	<p>
+	  <%= f.label :animalname, "Name" %><br>
+	  <%= f.text_field :animalname %>
+	</p>
+  <p>
+    <%= f.label :animalabout, "About" %><br>
+    <%= f.text_area :animalabout %>
+  </p>
+  <div class="field">
+    <%= f.file_field :file %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
