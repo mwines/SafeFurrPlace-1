@@ -1,0 +1,39 @@
+<%= render 'layouts/cheader' %>
+  <div class="container">
+    <div class="box">
+
+    <div class="col-md-12"><br>   
+      <div class="well well-lg" style="height: 500px;">
+      <div class="users">
+        <table style="width:100%;">
+              <tr>
+                <th width="20%">First Name</th>
+                <th width="20%">Last Name</th>
+                <th width="20%">User Name</th>
+                <th width="20%">Email</th>
+                <th width="10%">Privileges</th>
+                <th width="10%"></th>
+              </tr>
+              <% @users.each_with_index do |users, i| %>
+                <tr>
+
+                  <td><%= users.firstname %></td>
+                  <td><%= users.lastname %></td>
+                  <td><%= users.username %></td>
+                  <td><%= users.email %></td>
+                  <% if users.privileges == nil %>
+                    <td>NONE</td>
+                  <% else %>
+                    <td><%= users.privileges %></td>
+                  <% end %>
+                  <td><%= link_to 'Edit', edit_user_path(users) %></td>
+
+                </tr>
+              <% end %>
+        </table>
+      </div>
+      </div>
+    </div>
+   </div>
+  </div>
+

@@ -53,7 +53,18 @@
                 <div class="col-md-3 text-center">
                     
                     <div class="well well-lg">
-                      
+                      <% Tweet.get_latest %>
+                      <% tweet = Tweet.all %>
+                      <% tweet.reverse.each_with_index do |tweet, i| %>
+                        <% if i > 10 %>
+                          <% break %>
+                        <% end %> 
+                        <div class="w3-card-2" style="border-radius: 25px;">
+                          <div class="w3-container w3-center" style="background-color:white; border-radius:25px;">
+                            <%= tweet.content %>
+                          </div>
+                        </div><br>
+                      <% end %>
                     </div>
 
             </div>

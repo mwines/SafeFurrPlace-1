@@ -20,6 +20,6 @@ class WelcomeController < ApplicationController
 
   	private
     	def welcome_params
-      		params.require(:welcome).permit(:first_name, :last_name, :phoneNumber, :city, :state, :email, :count_pets)
+      		params.require(:welcome).permit(:first_name, :last_name, :phoneNumber, :city, :state)
     	end
 end
